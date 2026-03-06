@@ -24,7 +24,7 @@
 
 <main class="container">
     <nav class="breadcrumbs">
-        <a href="/browse">Вначало</a>
+        <a href="/">Вначало</a>
         <span th:each="crumb : ${breadcrumbs}">
       <span>›</span>
       <a th:href="@{'/browse'(path=${crumb.path})}" th:text="${crumb.label}"></a>
