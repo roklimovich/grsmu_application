@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GRSMU Application</title>
+    <link rel="shortcut icon" type="image/grsmu-icon" href="/icons/grsmu_server_logo.jpg">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="brand"><a href="/">GRSMU File Server </a> </div>
+    <nav class="nav-actions">
+        <a href="/support" class="text-sm mr-3" style="font-weight: bold">FAQ</a>
+        <a href="https://t.me/grsmu_web_server" title="Contact">
+            <img src="/icons/telegram.svg" alt="Contact">
+        </a>
+
+<!--        <a href="https://github.com/..." class="icon-link" title="GitHub">-->
+<!--            <img src="/icons/github_logo.svg" alt="GitHub">-->
+<!--        </a>-->
+    </nav>
+</header>
+
+<main class="container">
+    <nav class="breadcrumbs">
+        <a href="/browse">Вначало</a>
+        <span th:each="crumb : ${breadcrumbs}">
+      <span>›</span>
+      <a th:href="@{'/browse'(path=${crumb.path})}" th:text="${crumb.label}"></a>
+    </span>
+    </nav>
+
+    <section class="cards" id="cards">
+        <a th:each="item : ${items}"
+           th:href="${item.href}"
+           class="card"
+           th:attr="data-name=${item.name}">
+            <div class="icon" th:text="${item.directory} ? '📁' : '📄'"></div>
+            <div class="meta">
+                <div class="name" th:text="${item.name}"></div>
+                <div class="sub"
+                     th:text="${item.directory} ? 'Directory' : ${item.getSize} "></div>
+            </div>
+        </a>
+    </section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bybit Pay — QR</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .qr-wrapper {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+        }
+        .qr-card {
+            background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(15,23,42,.9));
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,.08);
+            padding: 24px 20px 28px;
+            text-align: center;
+            max-width: 380px;
+            width: 100%;
+        }
+        .qr-card h1 {
+            margin: 0 0 12px;
+            font-size: 1.25rem;
+        }
+        .qr-card p {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .qr-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 260px;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<header class="navbar">
+    <div class="brand"><a href="/">GRSMU File Server </a> </div>
+    <nav class="nav-actions">
+        <a href="/support" style="font-weight: bold">FAQ</a>
+        <a href="https://t.me/grsmu_web_server" title="Contact">
+            <img src="/icons/telegram.svg" alt="Contact">
+        </a>
+    </nav>
+</header>
+
+<main class="qr-wrapper">
+    <div class="qr-card">
+        <h1>Оплата через Bybit Pay</h1>
+        <p>Наведите камеру телефона на QR‑код ниже, чтобы быстро открыть страницу оплаты.</p>
+        <img src="/icons/qrcode.png" alt="Bybit Pay QR code" class="qr-image">
+    </div>
+</main>
+</body>
+</html>
