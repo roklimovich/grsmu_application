@@ -1,6 +1,8 @@
 package com.roklimovich.grsmu_application.service;
 
 import lombok.extern.java.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -18,15 +20,21 @@ import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
-@Log
 public class ClasspathContentService {
 
     private final Path baseDir;
+    Logger logger = LoggerFactory.getLogger(ClasspathContentService.class);
 
     public ClasspathContentService(
             @Value("${app.content.base-dir:data}") String dir) {
 
         this.baseDir = Paths.get(dir).normalize().toAbsolutePath();
+        logger.info("=== BASE DIR: {}", baseDir);
+        logger.info("=== EXISTS: {}", Files.exists(baseDir));
+        logger.info("=== /app contents: {}",
+                java.util.Arrays.toString(new java.io.File("/app").list()));
+        logger.info("=== /app/data contents: {}",
+                java.util.Arrays.toString(new java.io.File("/app/data").list()));
     }
 
     public List<Item> listChildren(String path) {
