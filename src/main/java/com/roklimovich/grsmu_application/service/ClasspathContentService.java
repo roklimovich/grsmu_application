@@ -1,5 +1,6 @@
 package com.roklimovich.grsmu_application.service;
 
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -17,12 +18,14 @@ import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
+@Log
 public class ClasspathContentService {
 
     private final Path baseDir;
 
     public ClasspathContentService(
             @Value("${app.content.base-dir:data}") String dir) {
+
         this.baseDir = Paths.get(dir).normalize().toAbsolutePath();
     }
 
