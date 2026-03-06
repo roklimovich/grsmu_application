@@ -1,0 +1,11 @@
+[phases.install]
+cmds = []
+
+[phases.build]
+cmds = [
+    "chmod +x mvnw",
+    "./mvnw -B -DskipTests clean install -Pproduction"
+]
+
+[deploy]
+cmd = "java -Dserver.port=$PORT $JAVA_OPTS -jar target/*jar"
