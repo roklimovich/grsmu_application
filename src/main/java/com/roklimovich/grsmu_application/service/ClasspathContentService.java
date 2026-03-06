@@ -1,5 +1,6 @@
 package com.roklimovich.grsmu_application.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
@@ -20,11 +21,9 @@ public class ClasspathContentService {
 
     private final Path baseDir;
 
-    public ClasspathContentService() {
-        // Read course content from a local "data" folder in the project root.
-        this.baseDir = Paths.get("data")
-                .normalize()
-                .toAbsolutePath();
+    public ClasspathContentService(
+            @Value("${app.content.base-dir:data}") String dir) {
+        this.baseDir = Paths.get(dir).normalize().toAbsolutePath();
     }
 
     public List<Item> listChildren(String path) {
