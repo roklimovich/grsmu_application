@@ -27,7 +27,7 @@
         <a href="/">Вначало</a>
         <span th:each="crumb : ${breadcrumbs}">
       <span>›</span>
-      <a th:href="@{'/browse'(path=${crumb.path})}" th:text="${crumb.label}"></a>
+      <a th:href="@{'/home'(path=${crumb.path})}" th:text="${crumb.label}"></a>
     </span>
     </nav>
 

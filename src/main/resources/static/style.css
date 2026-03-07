@@ -53,7 +53,12 @@ a:hover {
 }
 .card:hover { transform: translateY(-2px); border-color: rgba(96,165,250,.6); }
 .icon { font-size: 28px; }
-.meta .name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.meta {
+    min-width: 0;
+}
+.meta .name {    font-weight: 600;
+    white-space: normal;
+    word-break: break-word; }
 .meta .sub { font-size: 12px; color: var(--muted); }
 .actions { margin-top: 16px; display: flex; gap: 10px; }
 .btn {
