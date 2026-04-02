@@ -26,8 +26,8 @@ A web application built with **Spring Boot** for Grodno State Medical University
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/roklimovich/grsmu_application.git
-cd grsmu_application
+git clone https://github.com/roklimovich/grsmu-application.git
+cd grsmu-application
 ```
 
 ### 2. Build the project
@@ -59,7 +59,7 @@ The application will start on **http://localhost:8080** by default.
 ## Project Structure
 
 ```
-grsmu_application/
+grsmu-application/
 ├── data/                        # Data files / seed data
 ├── src/
 │   ├── main/
